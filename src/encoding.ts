@@ -103,7 +103,7 @@ export function encodeTexture(context: Context2D, format: string) {
 export function decodeTexture(texture: TextureData): Context2D {
     const decoder = formats[texture.format].decode;
     const context = createContext2D(texture.width, texture.height);
-    context.fillRect(0, 0, texture.width, texture.height);
+    context.clearRect(0, 0, texture.width, texture.height);
     const image = context.getImageData(0, 0, texture.width, texture.height);
     decoder(base64ToUint8(texture.data), image.data);
     context.putImageData(image, 0, 0);
