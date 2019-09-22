@@ -1,0 +1,12 @@
+image: node:9.11.1
+
+before_script:
+  - npm install
+
+build:
+  script:
+    - CI=false npm run build
+
+test:
+  script:
+    - npm run test
