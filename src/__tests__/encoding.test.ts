@@ -23,10 +23,7 @@ X__X_X_
 X__X__X
 _X_X_X_
 ____X_X
-_XXXXX_
-XXXXXXX
-XXXXXXX
-XXXXXXX`);
+_XXXXX_`);
 
 function asciiToRgba(ascii: string): Uint8ClampedArray {
     ascii = ascii.trim().replace(/\n/g, '');
