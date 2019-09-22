@@ -18,11 +18,6 @@ X__X_X_
 X__X__X
 _X_X_X_
 ____X_X
-_XXXXX_
-X__X_X_
-X__X__X
-_X_X_X_
-____X_X
 _XXXXX_`);
 
 function asciiToRgba(ascii: string): Uint8ClampedArray {
