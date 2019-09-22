@@ -1,6 +1,6 @@
 {
   "name": "blitsy-test",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pixel manipulation tools for bitsylike tools and game engines",
   "main": "lin/index.js",
   "types": "lib/index.d.ts",
