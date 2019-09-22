@@ -12,10 +12,10 @@ context.fillRect(0, 0, 4, 4);
  * @param height canvas height in pixels.
  */
 export function createCanvas(width: number, height: number): HTMLCanvasElement {
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  return canvas;
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    return canvas;
 }
 
 /**
@@ -24,6 +24,6 @@ export function createCanvas(width: number, height: number): HTMLCanvasElement {
  * @param height canvas height in pixels.
  */
 export function createContext2D(width: number, height: number): CanvasRenderingContext2D {
-  const canvas = createCanvas(width, height);
-  return canvas.getContext('2d')!;
+    const canvas = createCanvas(width, height);
+    return canvas.getContext('2d')!;
 }
