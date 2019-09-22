@@ -1,6 +1,12 @@
 import { decodeTexture, TextureData } from './encoding';
 import { makeRect, makeSprite, makeVector2, Sprite, Vector2 } from './sprite';
 
+export const EMPTY_FONT: Font = { 
+    name: "empty", 
+    lineHeight: 0, 
+    characters: new Map<number, FontCharacter>() 
+};
+
 export type FontData = FontDataUniform;
 export type Font = { name: string; lineHeight: number; characters: Map<number, FontCharacter> };
 export type FontCharacter = { codepoint: number; sprite: Sprite; offset: Vector2; spacing: number };
