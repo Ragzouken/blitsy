@@ -1,23 +1,22 @@
-import { decodeTexture, TextureData } from "./encoding";
-import { makeRect, makeSprite, makeVector2, Sprite, Vector2 } from "./sprite";
+import { decodeTexture, TextureData } from './encoding';
+import { makeRect, makeSprite, makeVector2, Sprite, Vector2 } from './sprite';
 
 export type FontData = FontDataUniform;
-export type Font = { name: string, lineHeight: number, characters: Map<number, FontCharacter> };
-export type FontCharacter = { codepoint: number, sprite: Sprite, offset: Vector2, spacing: number };
+export type Font = { name: string; lineHeight: number; characters: Map<number, FontCharacter> };
+export type FontCharacter = { codepoint: number; sprite: Sprite; offset: Vector2; spacing: number };
 
 export type FontDataUniform = {
-    _type: "font",
-    format: "U",
+    _type: 'font';
+    format: 'U';
 
-    name: string,
-    charWidth: number,
-    charHeight: number,
-    atlas: TextureData,
-    index: number[],
-}
+    name: string;
+    charWidth: number;
+    charHeight: number;
+    atlas: TextureData;
+    index: number[];
+};
 
-export function decodeFontUniform(fontData: FontDataUniform): Font
-{
+export function decodeFontUniform(fontData: FontDataUniform): Font {
     const characters = new Map<number, FontCharacter>();
     const atlas = decodeTexture(fontData.atlas);
     const width = fontData.charWidth;
@@ -34,7 +33,6 @@ export function decodeFontUniform(fontData: FontDataUniform): Font
     return { name: fontData.name, lineHeight: height, characters };
 }
 
-export function decodeFont(fontData: FontData): Font
-{
+export function decodeFont(fontData: FontData): Font {
     return decodeFontUniform(fontData);
 }
