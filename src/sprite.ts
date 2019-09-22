@@ -1,11 +1,11 @@
-import { MAGENTA_CANVAS_4x4, Canvas, createContext2D } from "./canvas";
+import { Canvas, createContext2D, MAGENTA_CANVAS_4X4 } from "./canvas";
 import { Image } from "./image";
 
 export type Vector2 = { x: number, y: number };
 export type Rect = { x: number, y: number, w: number, h: number };
 export type Sprite = { image: Image, rect: Rect };
 
-export const MAGENTA_SPRITE_4x4 = canvasToSprite(MAGENTA_CANVAS_4x4);
+export const MAGENTA_SPRITE_4X4 = canvasToSprite(MAGENTA_CANVAS_4X4);
 
 export function makeVector2(x: number, y: number): Vector2
 {
