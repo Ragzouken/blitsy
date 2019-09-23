@@ -1,6 +1,6 @@
 {
   "name": "blitsy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pixel manipulation utilities for bitsylike tools and game engines",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
