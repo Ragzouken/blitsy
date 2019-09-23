@@ -1,7 +1,7 @@
 {
-  "name": "blitsy-test",
+  "name": "blitsy",
   "version": "0.1.1",
-  "description": "Pixel manipulation tools for bitsylike tools and game engines",
+  "description": "Pixel manipulation utilities for bitsylike tools and game engines",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "candle",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Ragzouken/blitsy/issues"
   },

@@ -1,2 +1,2 @@
 # Blitsy
-test
+Pixel manipulation utilities for bitsylike tools and game engines.
