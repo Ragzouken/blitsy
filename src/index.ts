@@ -7,5 +7,5 @@ export * from './font';
 import asciiSmall from './fonts/ascii-small-font';
 
 export const fonts = {
-    "ascii-small": asciiSmall,
+    'ascii-small': asciiSmall,
 };

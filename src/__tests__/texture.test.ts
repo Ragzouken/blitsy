@@ -46,7 +46,7 @@ function encodeDecode(data: Uint8ClampedArray, format: string, width: number, he
     return decoded;
 }
 
-test.each(['M1', 'R4', 'R8', 'RGBA8'])("Can call encode texture", format => {
+test.each(['M1', 'R4', 'R8', 'RGBA8'])('Can call encode texture', format => {
     const context = createContext2D(32, 32);
     encodeTexture(context, format);
 });
