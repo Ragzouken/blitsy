@@ -1,4 +1,5 @@
 import { decodeTexture, encodeTexture, formats, TextureData } from '../index';
+import { createContext2D } from '../canvas';
 
 const arrowM1: TextureData = { _type: 'texture', format: 'M1', width: 11, height: 6, data: 'APAff/ABBxAA' };
 const squareM1: TextureData = { _type: 'texture', format: 'M1', width: 11, height: 6, data: '/OAHP/jBD34A' };
@@ -44,6 +45,11 @@ function encodeDecode(data: Uint8ClampedArray, format: string, width: number, he
     formats[format].decode(encoded, decoded);
     return decoded;
 }
+
+test.each(['M1', 'R4', 'R8', 'RGBA8'])("Can call encode texture", format => {
+    const context = createContext2D(32, 32);
+    encodeTexture(context, format);
+});
 
 test('RGBA8 encode/decode', () => {
     const decoded = encodeDecode(check7x11, 'RGBA8', 7, 11);
