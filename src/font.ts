@@ -1,5 +1,5 @@
-import { decodeTexture, TextureData } from './encoding';
 import { makeRect, makeSprite, makeVector2, Sprite, Vector2 } from './sprite';
+import { decodeTexture, TextureData } from './texture';
 
 export const EMPTY_FONT: Font = {
     name: 'empty',
