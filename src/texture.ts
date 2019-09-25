@@ -110,3 +110,18 @@ export function decodeTexture(texture: TextureData): Context2D {
 
     return context;
 }
+
+export function decodeAsciiTexture(ascii: string, solid = '1'): Context2D {
+    ascii = ascii.trim();
+    const rows = ascii.split('\n');
+    ascii = ascii.replace(/\n/g, '');
+
+    const [width, height] = [rows[0].length, rows.length];
+    const context = createContext2D(width, height);
+    const image = context.createImageData(width, height);
+    const colors = new Uint32Array(image.data.buffer);
+    colors.set(Array.from(ascii).map(c => (c === solid ? white : clear)));
+    context.putImageData(image, 0, 0);
+
+    return context;
+}
