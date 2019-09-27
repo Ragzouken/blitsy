@@ -30,8 +30,13 @@ export function decodeFontUniform(fontData: FontDataUniform): Font {
     const offset = makeVector2(0, 0);
     const spacing = fontData.charWidth;
 
+    const cols = fontData.atlas.width / width;
+
     fontData.index.forEach((codepoint: number, i: number) => {
-        const rect = makeRect(0, i * height, width, height);
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+
+        const rect = makeRect(col * width, row * height, width, height);
         const sprite = makeSprite(atlas.canvas, rect);
         characters.set(codepoint, { codepoint, sprite, offset, spacing });
     });

@@ -91,7 +91,7 @@ export const formats: { [id: string]: PixelFormat } = {
     M1: { decode: decodeM1, encode: encodeM1 },
 };
 
-export function encodeTexture(context: Context2D, format: string) {
+export function encodeTexture(context: Context2D, format: string): TextureData {
     const encoder = formats[format].encode;
     const [width, height] = [context.canvas.width, context.canvas.height];
     const pixels = context.getImageData(0, 0, width, height).data;
