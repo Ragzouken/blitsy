@@ -1,6 +1,3 @@
-export type Canvas = HTMLCanvasElement | OffscreenCanvas;
-export type Context2D = CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D;
-
 export const MAGENTA_CANVAS_4X4 = createCanvas(4, 4);
 const context = MAGENTA_CANVAS_4X4.getContext('2d')!;
 context.fillStyle = '#FF00FF';

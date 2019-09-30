@@ -1,11 +1,11 @@
-import { Canvas, createContext2D, MAGENTA_CANVAS_4X4 } from './canvas';
+import { createContext2D, MAGENTA_CANVAS_4X4 } from './canvas';
 import { Image } from './image';
 
 export type Vector2 = { x: number; y: number };
 export type Rect = { x: number; y: number; w: number; h: number };
 export type Sprite = { image: Image; rect: Rect };
 
-export const MAGENTA_SPRITE_4X4 = canvasToSprite(MAGENTA_CANVAS_4X4);
+export const MAGENTA_SPRITE_4X4 = imageToSprite(MAGENTA_CANVAS_4X4);
 
 export function makeVector2(x: number, y: number): Vector2 {
     return { x, y };
@@ -19,11 +19,11 @@ export function makeSprite(image: Image, rect: Rect): Sprite {
     return { image, rect };
 }
 
-export function canvasToSprite(canvas: Canvas): Sprite {
-    return { image: canvas, rect: makeRect(0, 0, canvas.width, canvas.height) };
+export function imageToSprite(image: Image): Sprite {
+    return { image, rect: makeRect(0, 0, image.width, image.height) };
 }
 
-export function spriteToCanvas(sprite: Sprite): Canvas {
+export function spriteToCanvas(sprite: Sprite): HTMLCanvasElement {
     const context = createContext2D(sprite.rect.w, sprite.rect.h);
     drawSprite(context, sprite, 0, 0);
     return context.canvas;

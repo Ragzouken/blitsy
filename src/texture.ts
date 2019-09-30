@@ -1,5 +1,5 @@
 import { base64ToUint8, uint8ToBase64 } from './base64';
-import { Context2D, createContext2D } from './canvas';
+import { createContext2D } from './canvas';
 
 export type TextureData = {
     _type: 'texture';
@@ -91,7 +91,7 @@ export const formats: { [id: string]: PixelFormat } = {
     M1: { decode: decodeM1, encode: encodeM1 },
 };
 
-export function encodeTexture(context: Context2D, format: string): TextureData {
+export function encodeTexture(context: CanvasRenderingContext2D, format: string): TextureData {
     const encoder = formats[format].encode;
     const [width, height] = [context.canvas.width, context.canvas.height];
     const pixels = context.getImageData(0, 0, width, height).data;
@@ -100,7 +100,7 @@ export function encodeTexture(context: Context2D, format: string): TextureData {
     return { _type: 'texture', format, width, height, data };
 }
 
-export function decodeTexture(texture: TextureData): Context2D {
+export function decodeTexture(texture: TextureData): CanvasRenderingContext2D {
     const decoder = formats[texture.format].decode;
     const context = createContext2D(texture.width, texture.height);
     context.clearRect(0, 0, texture.width, texture.height);
@@ -111,7 +111,7 @@ export function decodeTexture(texture: TextureData): Context2D {
     return context;
 }
 
-export function decodeAsciiTexture(ascii: string, solid = '1'): Context2D {
+export function decodeAsciiTexture(ascii: string, solid = '1'): CanvasRenderingContext2D {
     ascii = ascii.trim();
     const rows = ascii.split('\n');
     ascii = ascii.replace(/\n/g, '');
