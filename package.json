@@ -13,7 +13,8 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm test && npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "standalone": "npm run build && browserify lib/index.js -o blitsy.js --standalone blitsy"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,9 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "browserify-shim": "^3.8.14",
+    "save": "^2.4.0"
+  }
 }
